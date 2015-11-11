@@ -14,3 +14,5 @@
 /.bashrc
 .DS_Store
 .ovhconfig
+app/SymfonyRequirements.php
+web/config.php
