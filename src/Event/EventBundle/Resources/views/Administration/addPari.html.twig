@@ -1,0 +1,128 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+
+
+
+<!-- Page Content -->
+
+<div class="container">
+
+
+    <div>
+    </div>
+
+
+    <!-- Page Heading/Breadcrumbs -->
+    <div class="row-centered">
+        <div class="col-lg-12">
+            <div class="col-lg-9">
+                <h1 class="page-header">Admin dashboard
+                    <small> {{ pagetitle }}</small>
+                </h1>
+            </div>
+            <div class="col-lg-3">
+                <a href= {{ path ('event_event_admin') }}><button type="button" class="btn btn-info">Retour à la liste des paris</button></a>
+            </div>
+        </div>
+    </div>
+    <form action="{{ actionForm }}" {{ form_enctype(formEvent) }} method="POST">
+    <div class="row">
+        <div class="col-lg-12">
+                <h3>{{ form_label(formEvent.jeu, "Selection du jeu : ") }} </h3>
+                    {{ form_errors(formEvent.jeu) }}
+                    {{ form_widget(formEvent.jeu, { 'attr': {'class': 'form-control'} }) }}
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="col-lg-6">
+                <h4>Ajouter le titre du pari : </h4><br>
+                <form class="form-inline">
+                    <div class="form-group">
+                        {{ form_label(formEvent.titre, "Titre du Match : ") }}
+                        {{ form_errors(formEvent.titre) }}
+                        {{ form_widget(formEvent.titre, { 'attr': {'class': 'form-control'} }) }}
+                    </div>
+            </div>
+            <div class="col-lg-6">
+                <h4>Ajouter l'état du Paris </h4><br>
+                {{ form_label(formEvent.etat, "Selection de l'état: ") }}
+                {{ form_errors(formEvent.etat) }}
+                {{ form_widget(formEvent.etat, { 'attr': {'class': 'form-control'} }) }}
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="col-lg-6">
+                <h4>{{ form_label(formEvent.description, "Ajouter la description du match : ") }}<h4>
+                    {{ form_errors(formEvent.description) }}
+                    {{ form_widget(formEvent.description, { 'attr': {'class': 'form-control'} }) }}
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                       <h4>{{ form_label(formEvent.datefinpari, "Ajouter la date & heure de la cloture du pari") }}</h4>
+                        {{ form_errors(formEvent.datefinpari) }}
+                        {{ form_widget(formEvent.datefinpari) }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="col-lg-6">
+                <h4>{{ form_label(formEvent.equipe1, "Nom de l'équipe A") }}</h4>
+                {{ form_errors(formEvent.equipe1) }}
+                {{ form_widget(formEvent.equipe1, { 'attr': {'class': 'form-control'} }) }}
+            </div>
+            <div class="col-lg-6">
+                <h4>{{ form_label(formEvent.equipe2, "Nom de l'équipe B") }}</h4>
+                {{ form_errors(formEvent.equipe2) }}
+                {{ form_widget(formEvent.equipe2, { 'attr': {'class': 'form-control'} }) }}
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="col-lg-6">
+                <h4>{{ form_label(formEvent.coteteam1, "Côte de l'équipe A") }}</h4>
+                {{ form_errors(formEvent.coteteam1) }}
+                {{ form_widget(formEvent.coteteam1, { 'attr': {'class': 'form-control'} }) }}
+            </div>
+            <div class="col-lg-6">
+                <h4>{{ form_label(formEvent.coteteam2, "Côte de l'équipe B") }}</h4>
+                {{ form_errors(formEvent.coteteam2) }}
+                {{ form_widget(formEvent.coteteam2, { 'attr': {'class': 'form-control'} }) }}
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="col-lg-6">
+                <h4>Ajouter le lien twitch du stream :  </h4><br>
+                <input type="text" class="form-control" placeholder="https://twitch.tv/...">
+            </div>
+            <div class="col-lg-6">
+                <h4>Ajouter le nom du bookMaker :  </h4><br>
+                <input type="text" class="form-control" placeholder="Bookmaker">
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-lg-12">
+            {{ form_widget(formEvent.valider, { 'attr': {'class': 'btn btn-primary btn-lg btn-block'} }) }}
+            {{ form_rest(formEvent) }}
+
+        </div>
+    </div>
+</div>
+    </form>
+
+{% endblock %}
+

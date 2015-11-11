@@ -1,0 +1,279 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+
+<!-- Header Carousel -->
+<header id="myCarousel" class="carousel slide">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+        <div class="item active">
+            <img  src="{{ asset('img/spodek.jpg') }}" alt="First slide">
+            <div class="carousel-caption">
+            </div>
+        </div>
+        <div class="item">
+            <img width="100%" src="{{ asset('img/katowice2.jpg') }}" alt="First slide">
+            <div class="carousel-caption">
+            </div>
+        </div>
+        <div class="item">
+            <img  src="{{ asset('img/slider1.jpg') }}" alt="First slide" width="100%">
+            <div class="carousel-caption">
+            </div>
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="icon-prev"></span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="icon-next"></span>
+    </a>
+</header>
+
+<!-- Page Content -->
+<div class="container">
+
+    <!-- Marketing Icons Section -->
+    <div class="row header">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-1">
+                    <i class="fa fa-trophy fa-4x"></i>
+                </div>
+                <div class="col-md-3">
+                    <h3> Pariez sur vos Jeux !</h3>
+                    <p>Le système est simple, après l'ouverture de votre compte vous pouvez dès à présent commencez à parier sur votre équipe ! <br><a href="#"><small><i class="fa fa-arrow-right"></i> Suite</small></p></a>
+                </div>
+
+                <div class="col-md-1">
+                    <i class="fa fa-eye fa-4x"></i>
+                </div>
+                <div class="col-md-3">
+                    <h3> Suivez votre équipe !</h3>
+                    <p>Une page est à votre disposition pour suivre de long en large votre équipe favorite. Une analyse est faites par nos bookmakers afin d'élaborer une côtes sur celle-ci. <a href="#"><small><i class="fa fa-arrow-right"></i> Suite</small></p></a>
+                </div>
+                <div class="col-md-1">
+                    <i class="fa fa-users fa-4x"></i>
+                </div>
+                <div class="col-md-3">
+                    <h3> Tournois interne !</h3>
+                    <p>Créer votre équipe, démarquez vous des autres ! A chaque finale de tournois, les viewvers pourrons pariez sur vous !<a href="#"> <br><small><i class="fa fa-arrow-right"></i> Suite</small></p></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <!-- Exemple Content -->
+    <div class="row content">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-8">
+                    <h3>Voici un exemple de paris grace à Incom eSport.</h3>
+                    <hr>
+                    <h5>Exemple de simulation de paris : A (Fnatic) celle-ci joue aujourd'hui contre l'équipe B (Cloud 9).</h5>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5>Vous avez parier pour Fnatic</h5>
+                            <p>Fnatic à gagner le match, vous avez donc gagné votre paris. Vous obtenez une sommes suivant la côte du match afin d'augmenter votre mise. Durant la partie, Fnatic à tué 2 dragons. Si vous avez indiqué cette mention, votre somme est augmenté de 20%. <a href="#"><small><i class="fa fa-arrow-right"></i> Suite</small></a></p>
+                        </div>
+                        <div class="col-md-6">
+                            <h5>Vous avez parier pour cloud 9</h5>
+                            <p>Cloud 9 à malheureusement perdu sont match, vous avez donc perdu votre paris. Vous avez perdu la somme auquel vous avez misé. Si toute fois vous avez parier pour plusieurs bonus, et que Cloud 9 à accomplie ceux-ci, votre bonus n'est pas pris en compte. <a href="#"><small><i class="fa fa-arrow-right"></i> Suite</small></a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <img src="{{ asset ('img/spodek.jpg') }}" class="img-rounded" alt="image worlds">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <!-- Feedback -->
+    <div class="row avis">
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-lg-2">
+                        <span class="fa-stack fa-3x fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-user fa-stack-1x fa-inverse"></i>
+                        </span>
+                </div>
+
+                <div class="col-lg-5 white">
+                    <h5> LES AVIS DE NOS DERNIERS JOUEURS !</h5>
+                    <hr>
+                    <p>"Ce site est vraiment de confiance et le système vraiment réfléchis.<br>Fan de eSport j'ai parié de suite ! ..."<small> -Jeremy Antony.</small></p>
+                </div>
+                <div class="col-lg-5 white">
+                    <h5> LES AVIS DE NOS DERNIERS JOUEURS !</h5>
+                    <hr>
+                    <p>"Ce site est vraiment de confiance et le système vraiment réfléchis.<br>Fan de eSport j'ai parié de suite ! ..."<small> -Jeremy Antony.</small></p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<!-- / Feedback -->
+
+
+<!-- Back footer -->
+<div class="container">
+    <div class="row backfooter">
+        <div class="col-lg-12">
+            <div class="col-lg-4">
+                <h4><strong>Nos Bookmakers.</strong></h4>
+                <hr>
+                <div class="row">
+                    <div class="col-lg-2">
+                        <img src="{{ asset('img/slider1.jpg') }}" class="img-rounded" alt="image worlds">
+                    </div>
+                    <div class="col-lg-2 bookmakers">
+                        <p>Jérome, fan de league of legend depuis la saison 1, j'analyse pour vous la côte de tout les matchs EU & NA</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-lg-2">
+                        <img src="{{ asset('img/slider1.jpg') }}" class="img-rounded" alt="image worlds">
+                    </div>
+                    <div class="col-lg-2 bookmakers">
+                        <p>Emilie, manageuse depuis 6 ans dans une équipe pro Cs:GO. je vous fournis la côte des matchs EU Cs:GO</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-lg-2">
+                        <img src="{{ asset('img/slider1.jpg') }}" class="img-rounded" alt="image worlds">
+                    </div>
+                    <div class="col-lg-2 bookmakers">
+                        <p>Fabrice, TOP 2 Starcraft. En partenariat avec Incom, je vous propose la côte de tout les matchs</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <h4><strong>Sponsoring.</strong></h4>
+                <hr>
+                <div class="row">
+                    <div class="col-lg-2">
+                        <img src="{{ asset('img/eslone_logo.png') }}" class="img-rounded" alt="image worlds">
+                    </div>
+                    <div class="col-lg-2 bookmakers">
+                        <p>ESL ONE : Obtenez tous les résultats en direct, statistiques et nouvelles pour CS: GO! Scores en temps réel.</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-lg-2">
+                        <img src="{{ asset('img/lcslogo.png') }}" class="img-rounded" alt="image worlds">
+                    </div>
+                    <div class="col-lg-2 bookmakers">
+                        <p>Lolesports est votre ressource pour League of Legends, les caractéristiques et points forts. </p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-lg-2">
+                        <img src="{{ asset('img/intel-logo.jpg') }}" class="img-rounded" alt="image worlds">
+                    </div>
+                    <div class="col-lg-2 bookmakers">
+                        <p>Intel est un leader de informatique. La société construit les technologies pour les appareils informatiques du monde.</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-4">
+                <h4></strong>Notre Siege.</strong></h4>
+                <hr>
+                <div class="row">
+                    <div class="col-lg-2">
+                        <i class="fa fa-home fa-3x"></i>
+                    </div>
+                    <div class="col-lg-8">
+                        <h4>Adresse :</h4>
+                        <br>
+                        <p> 195 Avenue du 8 mai 1945 Septèmes les Vallons. France.
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-lg-2">
+                        <i class="fa fa-mobile fa-3x"></i>
+                    </div>
+                    <div class="col-lg-8">
+                        <h4>Téléphone : </h4>
+                        <p> +33(0)603837202</p>
+                    </div>
+                </div>
+                <hr>
+
+                <div class="row">
+                    <div class="col-lg-2">
+                        <i class="fa fa-envelope fa-3x"></i>
+                    </div>
+                    <div class="col-lg-8">
+                        <h4>Nos Emails :</h4>
+                        <p>info@incomesport.fr</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer -->
+
+
+<footer class="accueil">
+    <div class="container-fluid footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 footer">
+                    <div class="footer1">
+                        <div class="col-lg-5">
+                            <img class="logo" alt="Logo de incom esport" src="{{ asset('img/Incom_logo_blanc_web.png') }}">
+                            <div class="row">
+                                <ul>
+                                    <a href="{{ path ('event_event_listevents') }}"><li>Les Paris /</li></a>
+                                    <li>Les Jeux /</li>
+                                    <a href="{{ path ('event_event_blog') }}"><li>Blog /</li></a>
+
+                                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                                        <a id="login" href="{{ path('fos_user_profile_show') }}"> {{ app.user.username }}</a>
+                                    {% else %}
+                                        <a id="connexion" href="{{ path('fos_user_security_login') }}">Connexion</a>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-offset-4 col-lg-3 icones">
+                            <img class="icone footer" alt="Logo de incom esport" src="{{ asset ('img/icone_facebook_footer.png') }}">
+                            <img class="icone footer" alt="Logo de incom esport" src="{{ asset ('img/icone_twitter_footer.png') }}">
+                            <img class="icone footer" alt="Logo de incom esport" src="{{ asset ('img/icone_google+_footer.png') }}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+{% endblock %}
+

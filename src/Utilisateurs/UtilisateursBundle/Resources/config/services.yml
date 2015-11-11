@@ -1,0 +1,5 @@
+services:
+    utilisateurs_user.profile.form.type:
+        class: Utilisateurs\UtilisateursBundle\Form\Type\ProfileFormType
+        tags:
+            - { name: form.type, alias: utilisateurs_user_profile }

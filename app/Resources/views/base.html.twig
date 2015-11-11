@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>{% block title %}Incom eSport - 1er site de paris - Accueil{% endblock %}</title>
+        {% block stylesheets %}
+            <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+            <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+            <link href="{{ asset ('font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+            <link href='{{ asset ('http://fonts.googleapis.com/css?family=Lato') }}' rel='stylesheet' type='text/css'>
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+        {% block nav %}
+            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <img class="logo" alt="Logo de incom esport" src="{{ asset ('img/Incom_logo_blanc_web.png') }}">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html">
+                        </a>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="active">
+                                <a href= {{ path ('event_event_homepage') }}>Accueil</a>
+                            </li>
+                            <li>
+                                <a href={{ path ('event_event_listevents') }}>Les Paris</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Les Jeux <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="portfolio-1-col.html">League of Legends</a>
+                                    </li>
+                                    <li>
+                                        <a href="portfolio-2-col.html">CS:GO</a>
+                                    </li>
+                                    <li>
+                                        <a href="portfolio-3-col.html">StarCraft II</a>
+                                    </li>
+                                    <li>
+                                        <a href="portfolio-4-col.html">Heroes of the Storme.</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="{{ path ('event_event_blog') }}">Blog</a>
+                            </li>
+                            <li>
+                                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                                 <a id="login" href="{{ path('fos_user_profile_show') }}"> {{ app.user.username }}</a>
+                                {% else %}
+                                    <a id="connexion" href="{{ path('fos_user_security_login') }}">Connexion</a>
+                                {% endif %}
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </div>
+                <!-- /.container -->
+            </nav>
+        {% endblock %}
+
+        {% block javascripts %}
+            <script src="{{ asset ('https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js') }}"></script>
+            <script src="{{ asset ('https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js') }}"></script>
+            <script src="{{ asset ('js/jquery.js') }}"></script>
+            <script src="{{ asset ('js/bootstrap.min.js') }}"></script>
+            <script>
+                $('.carousel').carousel({
+                    interval: 5000 //changes the speed
+                })
+            </script>
+        {% endblock %}
+    </body>
+</html>

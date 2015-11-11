@@ -1,0 +1,122 @@
+{% extends '::base.html.twig' %}
+{%  block body %}
+<!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Heading/Breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">{{ event.titre }}</h1>
+                <ol class="breadcrumb">
+                    <li><a href="#">Listes évenemnts</a>
+                    </li>
+                    <li class="active">{{ event.titre }}</li>
+                </ol>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Content Row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <hr>
+                <p>Date de la fin du Pari :</p><p style="color:red"> <i class="fa fa-clock-o"></i>  {{ event.DateFinpari|date('Y-m-d H:i:s') }}</p>
+                <hr>
+            </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                 <div class="col-lg-9">
+                    <iframe src="http://www.twitch.tv/riotgames/embed" frameborder="0" scrolling="no" height="505" width="860"></iframe>
+                </div>
+                <div class="col-lg-3">
+                    <p> {{ event.equipe1.nom }}</p>
+                    <p> ADC</p>
+                    <p> ...</p>
+                    <hr>
+                    <p> {{ event.equipe2.nom }}</p>
+                    <p> ADC</p>
+                    <p> ...</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <hr>
+                <div class="col-lg-4">
+                    <p> {{ event.equipe1.nom }}
+                        {{ event.coteteam1 }}
+                    </p>
+                </div>
+
+                <div class="col-lg-4">
+                    <p class="text-center">Nom du bookmakers</p>
+                </div>
+
+                <div class="col-lg-4">
+                    <p class="text-right">
+                        {{ event.equipe2.nom }}
+                        {{ event.coteteam2 }}
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="row">
+            <form action="{{ actionForm }}" {{ form_enctype(formPari) }} method="POST">
+            <div class="col-lg-12">
+            <hr>
+            <h3>Faites vos Paris :</h3>
+                <div class="col-lg-3">
+                    <p> l'équipe gagnante est :
+
+                        {{ form_errors(formPari.equipeparie) }}
+                        {{ form_widget(formPari.equipeparie, { 'attr': {'class': 'form-control'} }) }}
+
+                    </p>
+                    <p>
+                        {{ message }}
+                    </p>
+                <hr>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <form class="form-inline">
+                    <div class="form-group"><br>
+                        {{ form_label(formPari.mise) }}
+                        {{ form_errors(formPari.mise) }}
+                        {{ form_widget(formPari.mise, { 'attr': {'class': 'form-control'} }) }}
+                        <hr>
+                        {{ form_widget(formPari.valider, { 'attr': {'class': 'btn btn-primary btn-lg btn-block'} }) }}
+                        {{ form_rest(formPari) }}
+                    </div>
+                </form>
+            </div>
+            </form>
+        </div>
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row-centered">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Incom e-Sport 2015</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    </div>
+
+</body>
+
+</html>
+
+
+{%  endblock %}

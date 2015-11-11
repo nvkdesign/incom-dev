@@ -1,0 +1,231 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Incom eSport - Connexion</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/main.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <img class="logo" alt="Logo de incom esport" src="img/Incom_logo_blanc_web.png">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">
+            </a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="about.html">Accueil</a>
+                </li>
+                <li>
+                    <a href="services.html">Les Paris</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Les Jeux <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="portfolio-1-col.html">League of Legends</a>
+                        </li>
+                        <li>
+                            <a href="portfolio-2-col.html">CS:GO</a>
+                        </li>
+                        <li>
+                            <a href="portfolio-3-col.html">StarCraft II</a>
+                        </li>
+                        <li>
+                            <a href="portfolio-4-col.html">Heroes of the Storme.</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="blog-home-1.html">Blog Home 1</a>
+                        </li>
+                        <li>
+                            <a href="blog-home-2.html">Blog Home 2</a>
+                        </li>
+                        <li>
+                            <a href="blog-post.html">Blog Post</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="active">
+                    <a href="contact.html">Connexion</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    {% for flashMessage in app.session.flashbag.get('noticeDelete') %}
+    <div class="row-centered">
+        <div class="col-lg-12">
+            <p class="bg-success">
+                {{ flashMessage }}
+            </p>
+        </div>
+    </div>
+    {% endfor %}
+
+    {% for flashMessage in app.session.flashbag.get('noticeAdd') %}
+        <div class="row-centered">
+            <div class="col-lg-12">
+                <p class="bg-success">
+                    {{ flashMessage }}
+                </p>
+            </div>
+        </div>
+    {% endfor %}
+
+    {% for flashMessage in app.session.flashbag.get('noticeEdit') %}
+        <div class="row-centered">
+            <div class="col-lg-12">
+                <p class="bg-success">
+                    {{ flashMessage }}
+                </p>
+            </div>
+        </div>
+    {% endfor %}
+
+    <div class="row-centered">
+        <div class="col-lg-12">
+            <div class="col-lg-6">
+                <h1 class="page-header">Admin dashboard
+                    <small> Gestion des Paris </small>
+                </h1>
+            </div>
+            <div class="col-lg-3">
+                <a href= {{ path ('event_event_addTeam') }}><button type="button" class="btn btn-info">Ajouter une équipe !</button></a>
+            </div>
+            <div class="col-lg-3">
+                <a href= {{ path ('event_event_addGame') }}><button type="button" class="btn btn-success">Ajouter un jeu !</button></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row-centered">
+        <div class="col-lg-12">
+            <a href={{ path ('event_event_addPari') }} <button type="button" class="btn btn-info btn-lg btn-block">Ajouter un pari !</button></a>
+            <br>
+            <br>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Icons</th>
+                        <th>Nom du jeu</th>
+                        <th>Nom du paris</th>
+                        <th>Date/heure de cloture du paris</th>
+                        <th>Equipe gagnante</th>
+                        <th>Nombre de paris effectué</th>
+                        <th>Etat</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {% for events in listEvent  %}
+                      <tr>
+                      <td>
+                          {% if events.Etat == 'termine' %}
+                          <a href={{ path ('event_event_admin_validate', {'id': events.id}) }} ><i class="fa fa-check-square-o fa-2x" style="color:#5cb85c"></i></a>
+                          {% else %}
+                          <i class="fa fa-check-square-o fa-2x" style="color:darkgray"></i>
+                          {% endif %}
+                          <a href={{ path ('event_event_addPari_edit', {'id': events.id}) }}><i class="fa fa-pencil fa-2x"></i></a>
+                        <a href={{ path ('event_event_admin_resumePari', {'id': events.id}) }}><i class="fa fa-eye fa-2x"></i>
+                        <a href={{ path('event_event_admin_delete' , {'id': events.id}) }}><i class="fa fa-trash-o fa-2x" style="color:red"></i></a>
+                        </td>
+                        <td>
+                            {{ events.jeu.nom }}
+                        </td>
+                        <td>
+                            {{ events.titre }}
+                        </td>
+                        <td>
+                            {{ events.DateFinpari|date('Y-m-d H:i:s') }}
+                        </td>
+                        <td>
+                            {% if events.equipegagnante == true %}
+                                {{ events.equipegagnante.nom }}
+                            {% else %}
+                                Le match n'est pas terminé !
+                            {% endif %}
+                        </td>
+                          <td>
+                              {{ events.listparis|length  }}
+                          </td>
+                          <td class="{{ events.Etat }}">
+                              {{ events.Etat }}
+                          </td>
+                    </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
+
+
+
+{% endblock %}
+

@@ -1,0 +1,68 @@
+event_event_homepage:
+    path:     /
+    defaults: { _controller: EventEventBundle:index:index }
+
+event_event_connect:
+    path:     /connect
+    defaults: { _controller: EventEventBundle:connect:connect }
+
+event_event_blog:
+    path:     /blog
+    defaults: { _controller: EventEventBundle:blog:blog }
+
+event_event_blogpost:
+    path:     /blog/post
+    defaults: { _controller: EventEventBundle:blog:post }
+
+event_event_resetPassword:
+    path:     /resetPassword
+    defaults: { _controller: EventEventBundle:connect:reset }
+
+event_event_admin:
+    path:     /admin
+    defaults: { _controller: EventEventBundle:admin:admin }
+
+event_event_addPari:
+    path:     /addPari
+    defaults: { _controller: EventEventBundle:addPari:addPari }
+
+event_event_addPari_edit:
+    path:     /addPari/{id}/edit
+    defaults: { _controller: EventEventBundle:addPari:edit }
+    requirements:
+            id:  \d+
+
+event_event_admin_delete:
+    pattern:  /admin/{id}/delete/
+    defaults: { _controller: EventEventBundle:admin:delete }
+    requirements:
+        id:  \d+
+
+event_event_admin_validate:
+    pattern:  /admin/{id}/validate/
+    defaults: { _controller: EventEventBundle:admin:validate }
+    requirements:
+        id:  \d+
+
+event_event_addTeam:
+    path:     /addTeam
+    defaults: { _controller: EventEventBundle:addTeam:addTeam }
+
+event_event_admin_resumePari:
+    path:     /admin/{id}/resumePari
+    defaults: { _controller: EventEventBundle:resumePari:resumePari }
+    requirements:
+        id:  \d+
+
+event_event_addGame:
+    path:     /addGame
+    defaults: { _controller: EventEventBundle:addGame:addGame }
+
+event_event_event:
+    path:     /event/{id}
+    defaults: { _controller: EventEventBundle:Pari:Pari }
+
+event_event_listevents:
+    path:    /listevents
+    defaults: { _controller: EventEventBundle:listEvents:listEvents }
+

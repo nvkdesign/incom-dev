@@ -1,0 +1,16 @@
+/web/bundles/
+/app/bootstrap*
+/app/cache/*
+/app/logs/*
+/vendor/
+/app/config/parameters.yml
+/.idea
+/.bash_history
+/.bash_logout
+/.bash_profile
+/.ovhconfig
+/.vim/
+/.viminfo
+/.bashrc
+.DS_Store
+.ovhconfig
