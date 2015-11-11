@@ -33,12 +33,12 @@ fos_user:
             confirmation:
                 enabled:    true
                 from_email:
-                    address:        incom.contacts@gmail.com
+                    address:        registration@incomesport.com
                     sender_name:    Incom Esport
     resetting:
             email:
                 from_email:
-                    address:        incom.contacts@gmail.com
+                    address:        registration@incomesport.com
                     sender_name:    Incom Esport
     profile:
         form:
@@ -90,10 +90,12 @@ doctrine:
 
 # Swiftmailer Configuration
 swiftmailer:
-    transport: gmail
+    transport: "%mailer_transport%"
     host:      "%mailer_host%"
-    username:  incom.contacts@gmail.com
-    password:  incomstaff
+    username:  "%mailer_user%"
+    password:  "%mailer_password%"
+    port:      "%mailer_port%"
+    auth_mode: "%mailer_auth_mode%"
     spool:     { type: memory }
 
 vich_uploader:
