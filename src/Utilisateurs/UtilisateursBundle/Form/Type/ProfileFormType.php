@@ -23,7 +23,8 @@ class ProfileFormType extends AbstractType
             ))
             ->add('dateanniversaire', 'birthday', array(
                 'widget' => 'choice',
-                'format' => 'dd MM yyyy',));
+                'format' => 'dd MM yyyy',))
+            ->remove('username');
     }
 
     public function getParent()
