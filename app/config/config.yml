@@ -94,8 +94,6 @@ swiftmailer:
     host:      "%mailer_host%"
     username:  "%mailer_user%"
     password:  "%mailer_password%"
-    port:      "%mailer_port%"
-    auth_mode: "%mailer_auth_mode%"
     spool:     { type: memory }
 
 vich_uploader:
@@ -104,7 +102,7 @@ vich_uploader:
     mappings:
             user_image:
                 uri_prefix:         /images/users
-                upload_destination: %kernel.root_dir%/../www/images/users
+                upload_destination: %kernel.root_dir%/../web/images/users
                 namer:              vich_uploader.namer_origname
 
                 inject_on_load:     false
