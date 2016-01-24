@@ -2,8 +2,6 @@
 {%  block body %}
 <!-- Page Content -->
 <div class="container">
-
-    <!-- Page Heading/Breadcrumbs -->
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">Les évenements -
@@ -16,81 +14,55 @@
             </ol>
         </div>
     </div>
-    <!-- /.row -->
-
     <div class="row">
-
-        <!-- Blog Entries Column -->
         <div class="col-md-8">
-                {% for event in listEvent  %}
-                {% if event.Etat == 'parisFerme' %}
-            <h2>
-                Live
-            </h2>
+            <h2>En cours</h2>
             <hr>
-            <h3>
-                    {{ event.titre }}
-            </h3>
-            <p><i class="fa fa-clock-o"></i> {{ event.datefinpari|date('Y-m-d H:i:s') }}</p>
+            {% for event in listEvent if event.Etat == 'parisFerme' %}
+                <h3>{{ event.titre }}</h3>
+                <p><i class="fa fa-clock-o"></i> {{ event.datefinpari|date('Y-m-d H:i:s') }}</p>
 
-            <a href="{{ path ('event_event_blogpost') }}"> <!-- 900x300 -->
-                <img class="img-responsive img-hover" src="{{ asset ('img/img-blog.jpg') }}" alt="">
-            </a>
+                <a href="#">
+                    <img class="img-responsive img-hover" src="{{ asset ('img/img-blog.jpg') }}" alt="">
+                </a>
+                <hr>
+                <p>{{ event.description }}</p>
+                <a class="btn btn-primary" href="{{ path ('event_event_event', {'id': event.id}) }}">Venez parier <i class="fa fa-angle-right"></i></a>
+                <hr>
+            {% else %}
+                Aucun match en cours pour le moment.
+            {% endfor %}
+            <h2>Prochainement</h2>
             <hr>
-            <p>{{ event.description }}</p>
-            <a class="btn btn-primary" href="{{ path ('event_event_event', {'id': event.id}) }}">Venez parier <i class="fa fa-angle-right"></i></a>
+            {% for event in listEvent if event.Etat == 'parisOuvert' %}
+                <h3>{{ event.titre }}</h3>
+                <p><i class="fa fa-clock-o"></i> {{ event.datefinpari|date('Y-m-d H:i:s') }}</p>
 
+                <a href="#">
+                    <img class="img-responsive img-hover" src="{{ asset ('img/img-blog.jpg') }}" alt="">
+                </a>
+                <hr>
+                <p>{{ event.description }}</p>
+                <a class="btn btn-primary" href="{{ path ('event_event_event', {'id': event.id}) }}">Venez parier <i class="fa fa-angle-right"></i></a>
+                <hr>
+            {% endfor %}
+            <h2>Terminé</h2>
             <hr>
-                {% elseif event.Etat == 'parisOuvert' %}
+            {% for event in listEvent if event.Etat == 'termine' %}
+                <h3>{{ event.titre }}</h3>
+                <p><i class="fa fa-clock-o"></i> {{ event.datefinpari|date('Y-m-d H:i:s') }}</p>
 
-
-
-            <h2>
-                Prochainement
-            </h2>
-            <h3>
-                {{ event.titre }}
-            </h3>
-            <p><i class="fa fa-clock-o"></i> {{ event.datefinpari|date('Y-m-d H:i:s') }}</p>
-
-            <a href="{{ path ('event_event_blogpost') }}"> <!-- 900x300 -->
-                <img class="img-responsive img-hover" src="{{ asset ('img/img-blog.jpg') }}" alt="">
-            </a>
-            <hr>
-            <p>{{ event.description }}</p>
-            <a class="btn btn-primary" href="{{ path ('event_event_event', {'id': event.id}) }}">Venez parier  <i class="fa fa-angle-right"></i></a>
-
-            <hr>
-                {% elseif event.Etat == 'termine' %}
-
-
-            <h2>
-
-                Terminé
-            </h2>
-            <hr>
-            <h3>
-                {{ event.titre }}
-            </h3>
-            <p><i class="fa fa-clock-o"></i>{{ event.datefinpari|date('Y-m-d H:i:s') }}</p>
-
-            <a href="{{ path ('event_event_blogpost') }}"> <!-- 900x300 -->
-                <img class="img-responsive img-hover" src="{{ asset ('img/img-blog.jpg') }}" alt="">
-            </a>
-            <hr>
-            <p>{{ event.description }}.</p>
-                    {% endif %}
-                    {% endfor %}
-
-            <!-- Pager -->
-
+                <a href="#">
+                    <img class="img-responsive img-hover" src="{{ asset ('img/img-blog.jpg') }}" alt="">
+                </a>
+                <hr>
+                <p>{{ event.description }}</p>
+                <a class="btn btn-primary" href="{{ path ('event_event_event', {'id': event.id}) }}">Venez parier <i class="fa fa-angle-right"></i></a>
+                <hr>
+            {% endfor %}
         </div>
     </div>
-    <!-- /.row -->
-
     <hr>
-
-    <!-- Footer -->
     <footer>
         <div class="row">
             <div class="col-lg-12">
@@ -100,7 +72,6 @@
     </footer>
 
 </div>
-
 </body>
 
 </html>
