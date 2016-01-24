@@ -8,6 +8,7 @@ set :repository, "git@github.com:nvkdesign/incom-dev.git" # L’URL de votre rep
 set :branch, "master" # La branche Git, utile si vous pushez vos releases de prod sur une branche particulière
 set :scm, :git # SVN ? Haha, vous plaisantez j’espère :-)
 set :deploy_via, :copy # Ils y a plusieurs méthodes de déploiements, nous utilisons la méthode de copy
+set :shared_files,      ["app/config/parameters.yml"]
 
 set :model_manager, "doctrine" # ORM
 
@@ -40,7 +41,7 @@ logger.level = Logger::MAX_LEVEL
 
 # Et enfin, si jamais vous rencontrez des erreurs de permissions, vous pouvez rajouter ces lignes suivantes :
 after "deploy:finalize_update" do
-run "chown -R dizda:www-data #{latest_release}"
+run "chown -R root:www-data #{latest_release}"
 run "sudo chmod -R 777 #{latest_release}/#{cache_path}"
 run "sudo chmod -R 777 #{latest_release}/#{log_path}"
 end

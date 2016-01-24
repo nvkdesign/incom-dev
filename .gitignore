@@ -16,3 +16,5 @@
 .ovhconfig
 app/SymfonyRequirements.php
 web/config.php
+Capfile
+/app/config/deploy.rb
